@@ -1,0 +1,2 @@
+# shiftsmanager
+Manager of shifts
