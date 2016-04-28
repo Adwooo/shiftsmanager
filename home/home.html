@@ -1,0 +1,18 @@
+<div class="card meetings cf">
+	<div class="textintro">
+		<h1>Success</h1>
+		<p class="message" ng-show="msg">{{msg}}</p>
+	</div>
+	<div class="textintro" ng-hide="events">
+    	<span>Authorize access to Google Calendar API</span>
+    	<!--Button for the user to click to initiate auth sequence -->
+    	<button id="authorize-button" ng-click="hanleAPICall(event)">
+    		Authorize
+    	</button>
+    </div>
+    <div ng-show="events">
+    	<p>Upcoming events:</p>
+	    <pre ng-repeat="event in events">{{event.summary}} ({{event.start.date}})</pre>
+    </div>
+    <p ng-show="noevents">{{noevents}}</p>
+</div><!-- meetings cf -->

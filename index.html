@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="ShiftManager">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Registration</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+
+	<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular/angular-animate.min.js"></script>
+
+	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+
+</head>
+<body>
+<header>
+	<nav class="cf" ng-include="'views/nav.html'"></nav>
+</header>
+<div class="page">
+	<div class="userinfo" ng-show="currentUser" ng-controller="UserController">
+		<span class="userinfo">Hi, {{currentUser.firstname}}</span>
+		<a ng-href="#/login/" ng-click="logout()">logout</a>
+	</div>
+  <main class="cf" ng-view></main>
+</div>
+	<script type="text/javascript" src="users/users.js"></script>
+	<script type="text/javascript" src="users/auth.js"></script>
+	<script type="text/javascript" src="home/home.js"></script>
+	<script type="text/javascript" src="calendar/api.js"></script>
+</body>
+</html>
