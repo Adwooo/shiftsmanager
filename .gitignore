@@ -75,3 +75,5 @@ GitHub.sublime-settings
 js/lib
 node_modules
 vendor
+calendar/oauth_callback.php
+js/app.js
