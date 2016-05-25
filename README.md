@@ -5,6 +5,7 @@ short description: this is an app for create and manage working shifts. This app
  - Feature: Ability to choose which days the worker prefer to take shifts and which days prefer to have break (day or night shift)
  - Feature: When shifts are created user can still change her/his shift by switching the shift with someone else using the 'Change Shift' button at home page.
  - Feature: Ability to use google calendar API and store all shifts there when created.
+ - Feature: When creating shifts for the day for all users that have degrees: degree1 - 'Resident' or degree2 - 'Doctor' it is also creating consulting shifts for 1 person per day for all users that have degree: degree2 - 'Doctor' which can be seen on the home page when shifts are created for a month.
 
 You can use the code and reference the owner of the code (me). thanks.
 
