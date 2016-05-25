@@ -14,11 +14,19 @@ basic usage:
  2. Fill your google calendar API data and refreshToken /calendar/oauth_callback.php (this is an optional step if you want to use google calendar API)
  3. Use the app
  
-technology that have been used:
+technology that have been used (you can take it from bower):
+ - angular
+ - angular-cookies
+ - angularfire
+ - angular-translate
+ - angular-translate-handler-log
+ - angular-translate-loader-static-files
+ - angular-translate-storage-cookie
+ - angular-translate-storage-local (this is not used, but it is great if you can use it)
+ - bootstrap
  - firebase
+ - jquery
+ - noty
  - google calendar API
- - Angularjs (1.5)
- - javascript
- - css/html
 
 if you have any issues using this app, please write them at the issue page. thanks!
