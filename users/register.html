@@ -1,0 +1,30 @@
+<section class="card register">
+  <form name="myform" class="form-group" ng-submit="register()" novalidate>
+
+    <div class="textintro">
+      <h1 translate="REGISTER"></h1>
+      <p translate="REGISTER_MSG"></p>
+      <p class="message" ng-show="msg">{{msg}}</p>
+    </div>
+
+    <fieldset>
+      <input type="text" name="firstname" ng-model="user.firstname" placeholder="{{'FIRST_NAME' | translate}}" ng-required="true">
+      <p class="error validationerror" ng-show="myform.firstname.$invalid && myform.firstname.$touched" translate="FIRST_NAME_ERROR"></p>
+      <input type="text" name="lastname" ng-model="user.lastname" placeholder="{{'LAST_NAME' | translate}}" ng-required="true">
+      <p class="error validationerror" ng-show="myform.lastname.$invalid && myform.lastname.$touched" translate="LAST_NAME_ERROR"></p>
+      <select class="form-control" name="degree" ng-model="user.degree" placeholder="{{'DEGREE' | translate}}" ng-required="true">
+        <option value="degree1" translate="DEGREE1"></option>
+        <option value="degree2" translate="DEGREE2"></option>
+        <option value="degree3" translate="DEGREE3"></option>
+      </select>
+      <p class="error validationerror" ng-show="myform.degree.$invalid && myform.degree.$touched" translate="DEGREE_ERROR"></p>
+      <input type="email" name="email" ng-model="user.email" placeholder="{{'EMAIL' | translate}}" ng-required="true">
+      <p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched" translate="EMAIL_ERROR"></p>
+      <input type="password" name="password" ng-model="user.password" placeholder="{{'PASSWORD' | translate}}" ng-required="true">
+      <p class="error validationerror" ng-show="myform.password.$invalid && myform.password.$touched" translate="PASSWORD_ERROR"></p>
+    </fieldset>
+
+    <input type="submit" class="btn" ng-disabled="myform.$invalid" value="{{'REGISTER' | translate}}">
+    <p>{{'OR' | translate}} <a href="#/login/">{{'LOGIN' | translate}}</a></p>
+  </form>
+</section>

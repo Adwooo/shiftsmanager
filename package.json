@@ -1,0 +1,27 @@
+{
+  "name": "shiftsmanager",
+  "version": "1.0.0",
+  "description": "Shifts Manager for work shifts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bulgariamitko/shiftsmanager.git"
+  },
+  "author": "Dimitar Klaturov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bulgariamitko/shiftsmanager/issues"
+  },
+  "homepage": "https://github.com/bulgariamitko/shiftsmanager#readme",
+  "devDependencies": {
+    "browser-sync": "^2.12.8",
+    "browserify": "^13.0.1",
+    "grunt-wiredep": "^3.0.1",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.2.0",
+    "vinyl-source-stream": "^1.1.0"
+  }
+}

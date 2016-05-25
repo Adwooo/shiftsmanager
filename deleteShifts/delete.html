@@ -1,0 +1,9 @@
+<div class="card meetings cf">
+    <div ng-repeat="(key, month) in months" style="margin: 10px 0px;">
+        <button class="btn btn-danger btn-lg" ng-click="deleteShifts(key)">{{'DELETE_SHIFTS_MSG' | translate}} {{key}}</button>
+    </div>
+    <hr>
+    <div>
+    	<button class="btn btn-danger btn-lg" ng-click="deletePosition()" translate="DELETE_LAST_INDEX"></button>
+    </div>
+</div><!-- meetings cf -->

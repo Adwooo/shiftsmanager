@@ -1,0 +1,47 @@
+<div class="card meetings cf">
+    <div ng-if="changeShift" class="alert alert-danger" ng-repeat="(key, value) in changeShift">
+        <strong translate="REQUEST"></strong> {{'TO_CHANGE_SHIFT' | translate}} {{value.myDate}} ({{value.myDayOrNight}}) {{'WITH' | translate}} {{value.yourDate}} ({{value.yourDayOrNight}}) {{'MADE_BY' | translate}} {{value.name}}. {{'APPROVE_SHIFT' | translate}} <br>
+         <button class="btn btn-success" ng-click="approve(key, value)" translate="APPROVE"></button> <button class="btn btn-danger" ng-click="deny(key)" translate="DENY"></button>
+    </div>
+	<div class="textintro">
+		<p class="message" ng-show="msg">{{msg}}</p>
+	</div>
+	<a href="#/createShifts/" ng-if="currentUser.role === 'role2' || currentUser.role === 'role3'" class="btn btn-lg btn-info" translate="CREATE_SHIFTS"></a>
+	<a href="#/workingPreferences/" class="btn btn-lg btn-info" translate="WORK_PREFER"></a>
+    <a href="#/users/" ng-if="currentUser.role === 'role2' || currentUser.role === 'role3'" class="btn btn-lg btn-info" translate="USERS"></a>
+    <a href="#/deleteShifts/" ng-if="currentUser.role === 'role2' || currentUser.role === 'role3'" class="btn btn-lg btn-info" translate="DELETE_SHIFTS"></a>
+	<!-- <div class="textintro" ng-hide="events">
+    	<span>Authorize access to Google Calendar API</span>
+    	<button id="authorize-button" ng-click="alreadyAPICall(event)">
+    		Authorize offline
+    	</button>
+    </div> -->
+    <h3 translate="UPCOMING_SHIFTS"></h3>
+    <div class="col-md-12" ng-if="objShifts">
+        <div class="col-md-4" style="height: 200px;" ng-repeat="dates in objShifts">
+            <ul ng-repeat="(yearMonth, dates2) in dates">
+                <h4>{{yearMonth}}</h4>
+                <li ng-repeat="(key, day) in dates2"><span ng-if="(day / NumbersOfShiftsPerDay) % 1 === 0">{{day / NumbersOfShiftsPerDay}} {{'DAY_SHIFT' | translate}}</span> <span ng-if="(day / NumbersOfShiftsPerDay) % 1 === 0.5">{{day / NumbersOfShiftsPerDay - 0.5}} {{'NIGHT_SHIFT' | translate}} </span><button class="btn btn-xs btn-warning" ng-click="sendShiftChange(day, yearMonth)" translate="CHANGE_SHIFT"></button></li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-12" ng-if="!objShifts" translate="NO_SHIFTS_MSG">
+    </div>
+    <div class="clearfix"></div>
+    <h3 style="margin-top: 60px;" translate="UPCOMING_CONSULTS"></h3>
+    <div class="col-md-12" ng-if="consultings">
+        <div class="col-md-4" style="height: 200px;" ng-repeat="dates in consultings">
+            <ul ng-repeat="(yearMonth, dates2) in dates">
+                <h4>{{yearMonth}}</h4>
+                <li ng-repeat="(key, day) in dates2">{{day}} {{'CONSULTING_DAY' | translate}}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-12" ng-if="!consultings" translate="NO_CONSULTING_MSG">
+    </div>
+    <!-- <div ng-show="events">
+    	<p>Upcoming shifts:</p>
+	    <pre ng-repeat="event in events">{{event.summary}} ({{event.start.date}})</pre>
+    </div>
+    <p ng-show="noevents">{{noevents}}</p> -->
+</div><!-- meetings cf -->

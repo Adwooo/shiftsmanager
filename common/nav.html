@@ -1,0 +1,19 @@
+<div class="branding"><a href="#/" translate="SHIFTS_MANAGER"></a></div>
+<ul>
+	<div ng-hide="currentUser">
+		<li><a href="#/login/" translate="LOGIN"></a></li>
+		<li><a href="#/register/" translate="REGISTER"></a></li>
+	</div>
+	<div>
+		<span ng-show="currentUser" ng-controller="UserController">
+			<li><a href="#/profile/" class="userinfo">{{'HI' | translate}}, {{currentUser.firstname}}</a><a class="btn btn-warning" ng-href="#/login/" ng-click="logout()" translate="LOGOUT"></a></li>
+		</span>
+		<span ng-controller="LanguageSwitchController">
+			<li><button class="btn btn-info" ng-show="lang == 'en'" ng-click="changeLanguage('bg')" translate="BUTTON_LANG_BG"></button></li>
+		  	<li><button class="btn btn-info" ng-show="lang == 'bg'" ng-click="changeLanguage('en')" translate="BUTTON_LANG_EN"></button></li>
+		</span>
+		<span ng-show="currentUser">
+			<li><a href="#/settings/" class="btn btn-info" translate="SETTINGS"></a></li>
+		</span>
+	</div>
+</ul>

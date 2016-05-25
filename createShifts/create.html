@@ -1,0 +1,13 @@
+<div class="card meetings cf">
+	{{shiftsPerDay}}
+	<h1 ng-if="successCreation">{{'SUCCESS_CREATION' | translate}} {{successCreation}}</h1>
+	<h3 class="text-center" translate="CREATE_SHIFTS_MSG"></h3>
+	<div class="form-group">
+		<label for="month" translate="CHOOSE_MONTH"></label>
+		<select class="form-control" name="month" id="month" ng-options="option.name for option in date.availableOptions track by option.id" ng-model="date.selectedOption" required></select>
+	</div>
+	<label for="year" translate="CHOOSE_YEAR"></label>
+	<input type="number" id="year" ng-model="date.year" min="{{currentYear}}" max="2100" value="{{currentYear}}" required></input>
+	<br>
+	<input type="button" class="btn btn-success" id="createShifts" ng-show="loaded" ng-click="getDate(date)" value="{{'CREATE' | translate }}"></input>
+</div>

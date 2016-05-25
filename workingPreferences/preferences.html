@@ -1,0 +1,57 @@
+<div class="card meetings cf">
+	<a href="#/allPreferedDays/" class="btn btn-lg btn-info" translate="VIEW_PREFER"></a>
+	<div class="clearfix"></div>
+	<div class="col-md-6" ng-if="workingPreferencesBreak">
+		<h3 translate="ALL_BREAK"></h3>
+		<div ng-repeat="dates in workingPreferencesBreak">
+			<ul ng-repeat="(yearMonth, dates2) in dates">
+				<h4>{{yearMonth}}</h4>
+				<li ng-repeat="(key, day) in dates2"><span ng-if="(day / 2) % 1 === 0">{{day / 2}} {{'DAY_SHIFT' | translate}}</span> <span ng-if="(day / 2) % 1 === 0.5">{{day / 2 - 0.5}} {{'NIGHT_SHIFT' | translate}}</span><button class="btn btn-xs btn-delete" ng-click="deleteBreakShift(key, yearMonth)" translate="DELETE"></button></li>
+			</ul>
+		</div>
+	</div>
+	<div class="col-md-6">
+		<h3 translate="ALL_WORK"></h3>
+		<div ng-repeat="dates in workingPreferencesWork">
+			<ul ng-repeat="(yearMonth, dates2) in dates">
+				<h4>{{yearMonth}}</h4>
+				<li ng-repeat="(key, day) in dates2"><span ng-if="(day / 2) % 1 === 0">{{day / 2}} {{'DAY_SHIFT' | translate}}</span> <span ng-if="(day / 2) % 1 === 0.5">{{day / 2 - 0.5}} {{'NIGHT_SHIFT' | translate}}</span><button class="btn btn-xs btn-delete" ng-click="deleteWorkShift(key, yearMonth)" translate="DELETE"></button></li>
+			</ul>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<hr>
+	<form name="formDay" novalidate>
+		<div class="form-group">
+			<label for="date" translate="CHOOSE_DATE"></label>
+			<input type="date" id="date" ng-model="preferredDay.day" ng-required="true"></input>
+			<label class="checkbox-inline">
+			  <input type="checkbox" ng-model="preferredDay.shiftDay" data-on="Enabled" data-off="Disabled">{{'CHOOSE_DAY_NIGHT' | translate}}
+			</label>
+			<label class="checkbox-inline">
+			  <input type="checkbox" ng-model="preferredDay.workOrNot" data-on="Enabled" data-off="Disabled">{{'I_WANT' | translate}}
+			</label>
+	<!-- 
+			<label for="dayNight">Choose day or night: </label>
+			<div class="toggle btn btn-primary" data-toggle="toggle" style="width: 77px; height: 34px;">
+				<input type="checkbox" id="dayNight" ng-model="preferredDay.shiftDay" data-toggle="toggle">
+				<input type="checkbox" ng-model="preferredDay.shiftDay" data-toggle="toggle">
+				<div class="toggle-group">
+					<label class="btn btn-primary toggle-on">Day</label>
+					<label class="btn btn-default active toggle-off">Night</label>
+					<span class="toggle-handle btn btn-default"></span>
+				</div>
+			</div>
+			<label for="workOrNot">I want: </label>
+			<div class="toggle btn btn-primary" data-toggle="toggle" style="width: 77px; height: 34px;">
+				<input type="checkbox" id="workOrNot" ng-model="preferredDay.workOrNot" data-toggle="toggle">
+				<div class="toggle-group">
+					<label class="btn btn-primary toggle-on">Break</label>
+					<label class="btn btn-default active toggle-off">Work</label>
+					<span class="toggle-handle btn btn-default"></span>
+				</div>
+			</div> -->
+		</div>
+		<input type="button" class="btn btn-success" ng-click="submitPreferedDay(preferredDay)" ng-disabled="formDay.$invalid" value="{{'SUBMIT' | translate}}"></input>
+	</form>
+</div>

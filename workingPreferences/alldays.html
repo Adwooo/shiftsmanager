@@ -1,0 +1,16 @@
+<div class="card meetings cf">
+	<div class="col-md-6" ng-if="allBreakDay">
+		<h3 translate="ALL_BREAK"></h3>
+		<ul ng-repeat="(yearMonth, dates) in allBreakDay">
+			<p>{{yearMonth}}:</p>
+			<li ng-repeat="day in dates"><span ng-if="(day / 2) % 1 === 0">{{day / 2}} {{'DAY_SHIFT' | translate}}</span> <span ng-if="(day / 2) % 1 === 0.5">{{day / 2 - 0.5}} {{'NIGHT_SHIFT' | translate}}</span></li>
+		</ul>
+	</div>
+	<div class="col-md-6" ng-if="allWorkDay">
+		<h3 translate="ALL_WORK"></h3>
+		<ul ng-repeat="(yearMonth, dates) in allWorkDay">
+			<p>{{yearMonth}}:</p>
+			<li ng-repeat="day in dates"><span ng-if="(day / 2) % 1 === 0">{{day / 2}} {{'DAY_SHIFT' | translate}}</span> <span ng-if="(day / 2) % 1 === 0.5">{{day / 2 - 0.5}} {{'NIGHT_SHIFT' | translate}}</span></li>
+		</ul>
+	</div>
+</div>

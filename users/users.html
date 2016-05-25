@@ -1,0 +1,10 @@
+<div class="card meetings cf">
+	<h3 translate="USERS"></h3>
+	<div ng-repeat="user in users">
+	<div class="col-md-3" style="margin: 10px 0px; height: 80px">
+	{{user.firstname}} {{user.lastname}} <br>
+	{{'MONOPOLY' | translate}}: {{user.monopoly}}, <br> {{'ROLE' | translate}}: <span ng-if="user.role === 'role1'">{{'ROLE1' | translate}}</span> <span ng-if="user.role === 'role2'">{{'ROLE2' | translate}}</span> <span ng-if="user.role === 'role3'">{{'ROLE3' | translate}}</span> <br>
+	<button class="btn btn-info" ng-click="loadProfile(user.regUser)" translate="LOAD_PROFILE"></button>
+	</div>
+	</div>
+</div>

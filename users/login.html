@@ -1,0 +1,16 @@
+<section class="card login">
+  <form name="myform" class="form-group" ng-submit="login()" novalidate>
+    <div class="textintro">
+      <p translate="LOGIN_MSG"></p>
+      <p class="message" ng-show="msg">{{msg}}</p>
+    </div>
+    <fieldset>
+      <input type="email" name="email" ng-model="user.email" placeholder="{{'EMAIL' | translate}}" ng-required="true">
+      <p class="error validationerror" ng-show="myform.email.$invalid && myform.email.$touched" translate="EMAIL_ERROR"></p>
+      <input type="password" name="password" ng-model="user.password" placeholder="{{'PASSWORD' | translate}}" ng-required="true">
+      <p class="error validationerror" ng-show="myform.password.$invalid && myform.password.$touched" translate="PASSWORD_ERROR"></p>
+    </fieldset>
+    <input type="submit" class="btn btn-info" ng-disabled="myform.$invalid" value="{{'LOGIN' | translate}}">
+    <p> {{'OR' | translate}} <a href="#/register/">{{'REGISTER' | translate}}</a></p>
+  </form>
+</section>

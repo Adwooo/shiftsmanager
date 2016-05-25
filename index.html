@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="{{lang}}" ng-app="ShiftManager">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Registration</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no">
+	<link href='https://fonts.googleapis.com/css?family=Lato:400,100,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<script type="text/javascript" src="js/lib/angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular/angular-route.min.js"></script>
+	<script type="text/javascript" src="js/lib/angular/angular-animate.min.js"></script>
+	<!-- translate -->
+	<script type="text/javascript" src="bower_components/angular-translate/angular-translate.js"></script>
+	<script type="text/javascript" src="bower_components/angular-translate-handler-log/angular-translate-handler-log.min.js"></script>
+	<script type="text/javascript" src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+
+	<script type="text/javascript" src="js/lib/jquery.noty.packaged.min.js"></script>
+
+	<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+	<script src="https://cdn.firebase.com/libs/angularfire/1.2.0/angularfire.min.js"></script>
+
+	<script src="https://apis.google.com/js/client.js?onload=checkAuth"></script>
+
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+<header>
+	<nav class="cf" ng-include="'common/nav.html'"></nav>
+</header>
+<div class="page">
+  <main class="cf" ng-view></main>
+</div>
+<footer>
+	<nav class="cf" ng-include="'common/footer.html'"></nav>
+</footer>
+	<script type="text/javascript" src="users/users.js"></script>
+	<script type="text/javascript" src="users/auth.js"></script>
+	<script type="text/javascript" src="home/home.js"></script>
+	<script type="text/javascript" src="calendar/api.js"></script>
+	<script type="text/javascript" src="language/language.js"/></script>
+	<script type="text/javascript" src="createShifts/createShifts.js"></script>
+	<script type="text/javascript" src="profile/profile.js"></script>
+	<script type="text/javascript" src="workingPreferences/workingPreferences.js"></script>
+	<script type="text/javascript" src="changeShift/changeShift.js"></script>
+	<script type="text/javascript" src="deleteShifts/deleteShift.js"></script>
+	<script type="text/javascript" src="settings/settings.js"></script>
+</body>
+</html>

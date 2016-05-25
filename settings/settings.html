@@ -1,0 +1,46 @@
+<div class="card meetings cf">
+	<p>{{shiftsPerDay}}</p>
+	<form class="form-group" name="mySettings" ng-submit="changeSettings(settings)">
+		<label for="shiftsPerDay" translate="SHIFTS_PER_DAY"></label>
+		<input type="name" id="shiftsPerDay" name="shiftsPerDay" ng-model="settings.shiftsPerDay" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.shiftsPerDay.$invalid && mySettings.shiftsPerDay.$touched" translate="SHIFTS_PER_DAY_ERROR"></p>
+		<label for="degree1en">{{'DEGREE' | translate}}-1 ({{'BUTTON_LANG_EN' | translate}})</label>
+		<input type="name" id="degree1en" name="degree1en" ng-model="settings.degree1en" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.degree1en.$invalid && mySettings.degree1en.$touched" translate="DEGREE_ERROR"></p>
+		<label for="degree1bg">{{'DEGREE' | translate}}-1 ({{'BUTTON_LANG_BG' | translate}})</label>
+		<input type="name" id="degree1bg" name="degree1bg" ng-model="settings.degree1bg" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.degree1bg.$invalid && mySettings.degree1bg.$touched" translate="DEGREE_ERROR"></p>
+		<label for="degree2en">{{'DEGREE' | translate}}-2 ({{'BUTTON_LANG_EN' | translate}})</label>
+		<input type="name" id="degree2en" name="degree2en" ng-model="settings.degree2en" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.degree2en.$invalid && mySettings.degree2en.$touched" translate="DEGREE_ERROR"></p>
+		<label for="degree2bg">{{'DEGREE' | translate}}-2 ({{'BUTTON_LANG_BG' | translate}})</label>
+		<input type="name" id="degree2bg" name="degree2bg" ng-model="settings.degree2bg" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.degree2bg.$invalid && mySettings.degree2bg.$touched" translate="DEGREE_ERROR"></p>
+		<label for="degree3en">{{'DEGREE' | translate}}-3 ({{'BUTTON_LANG_EN' | translate}})</label>
+		<input type="name" id="degree3en" name="degree3en" ng-model="settings.degree3en" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.degree3en.$invalid && mySettings.degree3en.$touched" translate="DEGREE_ERROR"></p>
+		<label for="degree3bg">{{'DEGREE' | translate}}-3 ({{'BUTTON_LANG_BG' | translate}})</label>
+		<input type="name" id="degree3bg" name="degree3bg" ng-model="settings.degree3bg" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.degree3bg.$invalid && mySettings.degree3bg.$touched" translate="DEGREE_ERROR"></p>
+		
+		<label for="role1en">{{'ROLE' | translate}}-1 ({{'BUTTON_LANG_EN' | translate}})</label>
+		<input type="name" id="role1en" name="role1en" ng-model="settings.role1en" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.role1en.$invalid && mySettings.role1en.$touched" translate="ROLE_ERROR"></p>
+		<label for="role1bg">{{'ROLE' | translate}}-1 ({{'BUTTON_LANG_BG' | translate}})</label>
+		<input type="name" id="role1bg" name="role1bg" ng-model="settings.role1bg" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.role1bg.$invalid && mySettings.role1bg.$touched" translate="ROLE_ERROR"></p>
+		<label for="role2en">{{'ROLE' | translate}}-2 ({{'BUTTON_LANG_EN' | translate}})</label>
+		<input type="name" id="role2en" name="role2en" ng-model="settings.role2en" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.role2en.$invalid && mySettings.role2en.$touched" translate="ROLE_ERROR"></p>
+		<label for="role2bg">{{'ROLE' | translate}}-2 ({{'BUTTON_LANG_BG' | translate}})</label>
+		<input type="name" id="role2bg" name="role2bg" ng-model="settings.role2bg" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.role2bg.$invalid && mySettings.role2bg.$touched" translate="ROLE_ERROR"></p>
+		<label for="role3en">{{'ROLE' | translate}}-3 ({{'BUTTON_LANG_EN' | translate}})</label>
+		<input type="name" id="role3en" name="role3en" ng-model="settings.role3en" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.role3en.$invalid && mySettings.role3en.$touched" translate="ROLE_ERROR"></p>
+		<label for="role3bg">{{'ROLE' | translate}}-3 ({{'BUTTON_LANG_BG' | translate}})</label>
+		<input type="name" id="role3bg" name="role3bg" ng-model="settings.role3bg" ng-required="true">
+		<p class="error validationerror" ng-show="mySettings.role3bg.$invalid && mySettings.role3bg.$touched" translate="ROLE_ERROR"></p>
+		<input type="submit" class="btn btn-info" ng-disabled="mySettings.$invalid"></input>
+	</form>
+</div>

@@ -1,0 +1,21 @@
+<div class="card meetings cf" ng-if="myShiftToChange">
+	<div ng-if="requests" class="alert alert-info" ng-repeat="request in requests">
+        <strong>{{'INFO' | translate}}: </strong> {{'YOU_HAVE_REQUEST' | translate}} {{request.myDate}} (<span ng-if="request.myDayOrNight === 'day shift'">{{'DAY_SHIFT' | translate}}</span><span ng-if="request.myDayOrNight === 'night shift'">{{'NIGHT_SHIFT' | translate}}</span>). {{'PENDING_REQUEST' | translate}}
+    </div>
+    <div ng-if="requests" class="alert alert-warning">
+        <strong>{{'CHANGING_SHIFT' | translate}}: </strong> {{'SELECTED_CHANGED' | translate}} {{myShiftToChangeDate}} (<span ng-if="dayOrNight === 'day shift'">{{'DAY_SHIFT' | translate}}</span><span ng-if="dayOrNight === 'night shift'">{{'NIGHT_SHIFT' | translate}}</span>). {{'SELECT_SHIFT_TO_CHANGE' | translate}}.
+    </div>
+	<div class="col-md-12" ng-if="allShifts">
+		<div class="col-md-4" style="height: 200px;" ng-repeat="dates in allShifts">
+			<ul ng-repeat="(yearMonth, dates2) in dates">
+				<h4>{{dates2.firstname}} {{dates2.lastname}} - {{yearMonth}} </h4>
+				<li ng-repeat="(key, day) in dates2.items"><span ng-if="(day / NumbersOfShiftsPerDay) % 1 === 0">{{day / NumbersOfShiftsPerDay}} {{'DAY_SHIFT' | translate}}</span> <span ng-if="(day / NumbersOfShiftsPerDay) % 1 === 0.5">{{day / NumbersOfShiftsPerDay - 0.5}} {{'NIGHT_SHIFT' | translate}}</span><button class="btn btn-xs btn-warning" ng-click="changeShift(dates2.regUser, day, yearMonth)" translate="CHANGE_SHIFT"></button></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="card meetings cf" ng-if="!myShiftToChange">
+	<div class="alert alert-danger">
+		<strong translate="ERROR"></strong> {{'CHANGE_SHIFT_ERROR' | translate}}
+	</div>
+</div>

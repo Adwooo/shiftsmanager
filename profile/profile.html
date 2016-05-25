@@ -1,0 +1,17 @@
+<div class="card meetings cf">
+	<form class="form-group">
+		<label for="firstname" translate="FIRST_NAME"></label>
+		<input type="text" id="firstname" value="{{profileInfo.firstname}}" disabled></input>
+		<label for="lastname" translate="LAST_NAME"></label>
+		<input type="text" id="lastname" value="{{profileInfo.lastname}}" disabled></input>
+		<label for="email" translate="EMAIL"></label>
+		<input type="email" id="email" value="{{profileInfo.email}}" disabled></input>
+		<label for="degree" translate="DEGREE"></label>
+		<select class="form-control" id="degree" ng-options="option.name for option in person.type track by option.value" ng-model="person.selectedOption" ng-value="{{profileInfo.degree}}" required></select> <br>
+		<label for="monopoly" ng-if="currentUser.role === 'role2' || currentUser.role === 'role3'" translate="MONOPOLY"></label>
+		<select class="form-control" id="monopoly" ng-if="currentUser.role === 'role2' || currentUser.role === 'role3'" ng-options="option.name for option in person.monopolyOptions track by option.name" ng-model="person.monopolySelected" ng-value="{{profileInfo.monopoly}}" required></select> <br>
+		<label for="role" ng-if="currentUser.role === 'role2' || currentUser.role === 'role3'" translate="ROLE"></label>
+		<select class="form-control" id="role" ng-if="currentUser.role === 'role2' || currentUser.role === 'role3'" ng-options="option.name for option in person.roleType track by option.value" ng-model="person.roleOption" ng-value="{{profileInfo.role}}" required></select> <br>
+		<input type="submit" class="btn btn-info" ng-click="changeProfileData(person, id)"></input>
+	</form>
+</div>
