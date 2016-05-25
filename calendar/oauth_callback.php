@@ -27,7 +27,7 @@
         echo "</pre>";
     }
 
-
+    // if you need to take refresh token, do it like this...
     // if ($_GET['code']) {
     //     // Refresh the token if it's expired.
     //     $accessToken = $client->authenticate($_GET['code']);
