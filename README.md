@@ -10,11 +10,12 @@ short description: this is an app for create and manage working shifts. This app
 You can use the code and reference the owner of the code (me). thanks.
 
 basic usage: 
- 1. Fill your firebase and google calendar  /js/app.js - .constant {'BASE_URL': 'FILL_YOUR_FIREBASE_URL', 'API': 'FILL_YOUR_GOOGLE_CALENDAR_API_ID'}
- 2. Fill your google calendar API data and refreshToken /calendar/oauth_callback.php (this is an optional step if you want to use google calendar API)
- 3. Use the app
+ 1. Fill in in index.html all dependencies (you can see all of them on the bottom of this page)
+ 2. Fill your firebase and google calendar  /js/app.js - .constant {'BASE_URL': 'FILL_YOUR_FIREBASE_URL', 'API': 'FILL_YOUR_GOOGLE_CALENDAR_API_ID'}
+ 3. Fill your google calendar API data and refreshToken /calendar/oauth_callback.php (this is an optional step if you want to use google calendar API)
+ 4. Use the app
  
-technology that have been used (you can take it from bower):
+dependencies that have been used (you can take it from bower):
  - angular
  - angular-cookies
  - angularfire
@@ -27,6 +28,6 @@ technology that have been used (you can take it from bower):
  - firebase
  - jquery
  - noty
- - google calendar API
+ - google calendar API (more details how to intall and work with the API from here: https://github.com/wanasit/google-calendar and https://developers.google.com/google-apps/calendar/quickstart/js - at the end of the day you should have a folder call 'vendor' and inside there should be the api. this is one way of doing it, there are other ways as well.)
 
 if you have any issues using this app, please write them at the issue page. thanks!
