@@ -50,7 +50,7 @@ ShiftManager.config(['$routeProvider', '$translateProvider', function($routeProv
 	    suffix: '.json'
 	}).preferredLanguage('bg').useMissingTranslationHandlerLog().useSanitizeValueStrategy('escape');
 }]).constant({
-	'BASE_URL': 'https://shiftsmanager.firebaseio.com/',
+	'BASE_URL': 'FILL_IT',
 	'CLIENT_ID': 'FILL_IT',
 	'SCOPES': ["https://www.googleapis.com/auth/calendar"]
 });
